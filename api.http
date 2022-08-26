@@ -1,0 +1,40 @@
+### Get All
+GET http://localhost:3000/courses/3
+
+###
+GET http://localhost:3000/courses/search?key=50
+
+###
+GET http://localhost:3000/courses
+
+###
+POST http://localhost:3000/courses
+Content-Type: application/json
+
+{
+    "name": "Swager",
+    "description": "Curso de Nest com Type Prisma Mongo e Swagger da Udemy",
+    "tags": ["documentation", "API"]
+}
+
+###
+PATCH  http://localhost:3000/courses/3
+Content-Type: application/json
+
+{
+    "name": "Swagger",
+    "description": "Curso de NestJS com TypeORM Prisma MongoDB e Swagger da Udemy",
+}
+
+###
+PATCH  http://localhost:3000/courses/3
+Content-Type: application/json
+
+{
+    "outher": "outher"
+}
+
+
+###
+DELETE http://localhost:3000/courses/3
+Content-Type: application/json
