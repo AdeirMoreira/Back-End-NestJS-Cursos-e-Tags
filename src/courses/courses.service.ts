@@ -1,27 +1,21 @@
-import { HttpException, Injectable, NotAcceptableException, NotFoundException, NotImplementedException } from '@nestjs/common';
+import { Injectable, NotFoundException} from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UuidService } from 'src/libs/uuid.service';
+import { Repository } from 'typeorm';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { Course } from './entities/course.entity';
 
 @Injectable()
 export class CoursesService {
-    private courses:Course[] = [
-        {
-            id: '1',
-            name: 'NestJS',
-            description: 'Curso de NestJS da Udemy',
-            tags: ['nestjs', 'nodejs', 'backend']
-        },
-        {
-            id: '2',
-            name: 'TypeORM',
-            description: 'Curso de TypeORM da Udemy',
-            tags: ['nestjs', 'TypeORM', 'backend']
-        }
-    ]
+    constructor(
+        @InjectRepository(Course)
+        private readonly courseRepository: Repository<Course>,
+        private readonly uuidService: UuidService
+    ){}
 
     findOne(id:string) {
-        const course = this.courses.find(course => id === course.id)
+        const course = this.courseRepository.findOneBy({id})
         if(!course) {
             throw new NotFoundException(`course id ${id} not found!`)
         }
@@ -29,30 +23,21 @@ export class CoursesService {
     }
 
     findAll() {
-        return this.courses
+        return this.courseRepository.find()
     }
 
-    create(course:CreateCourseDto){
-        this.courses.push(course)
+    async create(course:CreateCourseDto){
+        const Course:Course = {...course, id: this.uuidService.generate()}
+        this.courseRepository.save(Course)
         return course
     }
 
     update(id:string, course:UpdateCourseDto){
-        this.courses.map(c => {
-            if(c.id === id) {
-                c.name = course.name || c.name
-                c.description = course.description || c.description
-                c.tags = course.tags || c.tags
-                return c
-            } 
-            return c
-        }
-        )
+        
         return course
     }
 
     delete(id:string){
-        const newArray = this.courses.filter(course => course.id !== id)
-        this.courses = newArray
+        return this.courseRepository.delete(id)
     }
 }
