@@ -10,8 +10,8 @@ export class CoursesController {
 
     @Get()
     @HttpCode(HttpStatus.OK)
-    findAll (@Res() res) {
-        return res.status(HttpStatus.OK).send(this.courseService.findAll())
+    async findAll (@Res() res) {
+        return res.status(HttpStatus.OK).send(await this.courseService.findAll())
     }
 
     @Get('search')

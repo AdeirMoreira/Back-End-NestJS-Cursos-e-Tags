@@ -22,8 +22,9 @@ export class CoursesService {
         return course
     }
 
-    findAll() {
+    async findAll() {
         return this.courseRepository.find()
+         
     }
 
     async create(course:CreateCourseDto){
@@ -33,8 +34,7 @@ export class CoursesService {
     }
 
     update(id:string, course:UpdateCourseDto){
-        
-        return course
+        return this.courseRepository.update(id,course)
     }
 
     delete(id:string){

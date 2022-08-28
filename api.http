@@ -32,40 +32,40 @@ GET http://localhost:3000/user/c07e7872-e97d-4b22-9083-c7f18c284530
 ### Delete User
 DELETE http://localhost:3000/user/119fe2a3-ca2c-40fb-9f74-fc25fdcaca5e
 
-### Get All Movies
-GET http://localhost:3000/movies
+### Get All Courses
+GET http://localhost:3000/courses
 Authorization: {{token}}
 
-### Get Movie By Id
-GET http://localhost:3000/movies/1
+### Get corses By Id
+GET http://localhost:3000/courses/
 Authorization: {{token}}
 
-### Resgister Movie
-POST http://localhost:3000/movies
+### Get By query
+GET http://localhost:3000/courses?search=
+Authorization: {{token}}
+
+### Resgister course
+POST http://localhost:3000/courses
 Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "name": "",
-    "category": "Categoria",
-    "premiere_date": "2022/12/20",
-    "description": "Descrição",
-    "duration": 120
+    "name": "NestJS",
+    "description": "Curso de Nest, Node e Type",
+    "tags": []
 }
 
 ### Edit Movie
-PATCH   http://localhost:3000/movies/80c44a9f-2f80-4576-9429-f56ad2071876
+PATCH   http://localhost:3000/courses/cdfeb598-2cc7-461d-9de4-81f811aac4f8
 Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "name": "teste",
-    "category": "teste",
-    "premiere_date": "2022/12/12",
-    "description": "description",
-    "duration": 120
+    "name": "NestJS",
+    "description": "Curso de NestJS, NodeJS e TypeORM",
+    "tags": ["NestJS","NodeJS","TypeORM"]
 }
 
 ### Delete Movies
-DELETE  http://localhost:3000/movies/80c44a9f-2f80-4576-9429-f56ad2071876
+DELETE  http://localhost:3000/courses/80c44a9f-2f80-4576-9429-f56ad2071876
 Authorization: {{token}}
