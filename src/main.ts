@@ -1,7 +1,10 @@
+import "reflect-metadata";
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { migrationDataSource } from "./config/typeorm";
+// import migrationDataSource from "./config/typeorm";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -19,3 +22,11 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
+
+const main =  async () =>  {
+  const pg = migrationDataSource
+  pg.initialize()
+}
+
+main()
+

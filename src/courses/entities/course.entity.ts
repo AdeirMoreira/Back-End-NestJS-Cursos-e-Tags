@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from "typeorm"
+import { Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from "typeorm"
+import { Tag } from "./tag.entity"
 
 @Entity('Udemy-NestJS-Courses')
 export class Course {
@@ -12,6 +13,7 @@ export class Course {
     @Column('text')
     description: string
 
-    @Column({ type: "json", nullable: true})
-    tags: string[]
+    @JoinTable({name: 'Udemy-NestJS-CourseTagPivoTable'})
+    @ManyToMany(() => Tag, (tag) => tag.course, {cascade: true,})
+    tags: Tag[]
 }

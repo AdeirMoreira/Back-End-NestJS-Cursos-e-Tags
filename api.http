@@ -37,11 +37,11 @@ GET http://localhost:3000/courses
 Authorization: {{token}}
 
 ### Get corses By Id
-GET http://localhost:3000/courses/
+GET http://localhost:3000/courses/6df75d6d-a2d1-4220-a3bc-8630d4fa190e
 Authorization: {{token}}
 
 ### Get By query
-GET http://localhost:3000/courses?search=
+GET http://localhost:3000/courses/search?s=6df75d6d-a2d1-4220-a3bc-8630d4fa190e
 Authorization: {{token}}
 
 ### Resgister course
@@ -55,17 +55,16 @@ Content-Type: application/json
     "tags": []
 }
 
-### Edit Movie
-PATCH   http://localhost:3000/courses/cdfeb598-2cc7-461d-9de4-81f811aac4f8
+### Edit Course
+PATCH   http://localhost:3000/courses/a7ea1238-a855-4160-8acd-bd02cb6f87d9
 Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "name": "NestJS",
     "description": "Curso de NestJS, NodeJS e TypeORM",
     "tags": ["NestJS","NodeJS","TypeORM"]
 }
 
-### Delete Movies
-DELETE  http://localhost:3000/courses/80c44a9f-2f80-4576-9429-f56ad2071876
+### Delete Course
+DELETE  http://localhost:3000/courses/64ec2b2a-e342-420b-a353-1addb0a32e5d
 Authorization: {{token}}

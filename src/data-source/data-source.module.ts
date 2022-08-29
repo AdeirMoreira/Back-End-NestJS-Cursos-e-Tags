@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { config } from "dotenv";
+import { config } from 'dotenv';
 import { Course } from 'src/courses/entities/course.entity';
+import { Tag } from 'src/courses/entities/tag.entity';
+import { DataSource } from 'typeorm';
 
-config()
+config();
 
 @Module({
   imports: [
@@ -14,8 +16,8 @@ config()
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      entities: [Course],
-      synchronize: true,
+      entities: [Course, Tag],
+      synchronize: false,
       retryAttempts: 2,
       retryDelay: 100,
       autoLoadEntities: true,
@@ -23,3 +25,5 @@ config()
   ],
 })
 export class DataSourceModule {}
+
+
