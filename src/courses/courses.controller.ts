@@ -7,17 +7,19 @@ import { UpdateCourseDto } from './dto/update-course.dto';
 @Controller('courses')
 export class CoursesController {
     constructor(private readonly courseService:CoursesService){}
+    
+    @Get('search')
+    findOneByQuery(@Query('s') key:string){
+        return this.courseService.findOne(key)
+    }
 
     @Get()
     @HttpCode(HttpStatus.OK)
-    findAll (@Res() res) {
-        return res.status(HttpStatus.OK).send(this.courseService.findAll())
+    async findAll (@Res() res) {
+        return res.status(HttpStatus.OK).send(await this.courseService.findAll())
     }
 
-    @Get('search')
-    findOneByQuery(@Query('key') key:string){
-        return this.courseService.findOne(key)
-    }
+    
 
     @Get(':id')
     findOne(@Param('id') id:string){

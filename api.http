@@ -1,40 +1,70 @@
-### Get All
-GET http://localhost:3000/courses/3
+### SingUp
+POST http://localhost:3000/user
+Content-Type: application/json 
+
+{
+    "name": "teste",
+    "email": "teste@email.com",
+    "password": "123"
+}
+
+### Login
+# @name login
+POST http://localhost:3000/user/login
+Content-Type: application/json 
+
+{
+    "email": "teste@email.com",
+    "password": "123"
+}
 
 ###
-GET http://localhost:3000/courses/search?key=50
-
+@token = {{login.response.body.token}}
 ###
+
+### Get All Users
+GET http://localhost:3000/user
+Authorization: {{token}}
+
+### Get User By Id
+GET http://localhost:3000/user/c07e7872-e97d-4b22-9083-c7f18c284530
+
+### Delete User
+DELETE http://localhost:3000/user/119fe2a3-ca2c-40fb-9f74-fc25fdcaca5e
+
+### Get All Courses
 GET http://localhost:3000/courses
+Authorization: {{token}}
 
-###
+### Get corses By Id
+GET http://localhost:3000/courses/6df75d6d-a2d1-4220-a3bc-8630d4fa190e
+Authorization: {{token}}
+
+### Get By query
+GET http://localhost:3000/courses/search?s=6df75d6d-a2d1-4220-a3bc-8630d4fa190e
+Authorization: {{token}}
+
+### Resgister course
 POST http://localhost:3000/courses
+Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "name": "Swager",
-    "description": "Curso de Nest com Type Prisma Mongo e Swagger da Udemy",
-    "tags": ["documentation", "API"]
+    "name": "NestJS",
+    "description": "Curso de Nest, Node e Type",
+    "tags": []
 }
 
-###
-PATCH  http://localhost:3000/courses/3
+### Edit Course
+PATCH   http://localhost:3000/courses/a7ea1238-a855-4160-8acd-bd02cb6f87d9
+Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "name": "Swagger",
-    "description": "Curso de NestJS com TypeORM Prisma MongoDB e Swagger da Udemy",
+    "description": "Curso de NestJS, NodeJS e TypeORM",
+    "tags": ["NestJS","NodeJS","TypeORM"]
 }
 
-###
-PATCH  http://localhost:3000/courses/3
-Content-Type: application/json
-
-{
-    "outher": "outher"
-}
-
-
-###
-DELETE http://localhost:3000/courses/3
-Content-Type: application/json
+### Delete Course
+DELETE  http://localhost:3000/courses/64ec2b2a-e342-420b-a353-1addb0a32e5d
+Authorization: {{token}}
