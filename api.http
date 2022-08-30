@@ -56,7 +56,7 @@ Content-Type: application/json
 }
 
 ### Edit Course
-PATCH   http://localhost:3000/courses/a7ea1238-a855-4160-8acd-bd02cb6f87d9
+PATCH   http://localhost:3000/courses/74f10589-cb31-4e17-99df-3a39bbdd2e13
 Authorization: {{token}}
 Content-Type: application/json
 
