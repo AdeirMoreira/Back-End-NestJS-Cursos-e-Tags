@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UuidService } from 'src/libs/uuid.service';
 import { Repository } from 'typeorm';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
@@ -13,8 +12,7 @@ export class CoursesService {
         @InjectRepository(Course)
         private readonly courseRepository: Repository<Course>,
         @InjectRepository(Tag)
-        private readonly tagRepository: Repository<Tag>,
-        private readonly uuidService: UuidService
+        private readonly tagRepository: Repository<Tag>
     ){}
 
     async findOne(id:string) {
@@ -33,7 +31,7 @@ export class CoursesService {
         const tags = await Promise.all(
             courseDto.tags.map((name:string) => this.preloadTagByName(name))
         )
-        const course:Course = { id: this.uuidService.generate(), ...courseDto, tags}
+        const course = this.courseRepository.create({...courseDto, tags})
         return this.courseRepository.save(course)
     }
 
@@ -63,7 +61,6 @@ export class CoursesService {
         if(tag) {
             return tag
         }
-        const newTag = {id: this.uuidService.generate(), name, }
-        return this.tagRepository.save(newTag)
+        return this.tagRepository.create({name})
     }
 }

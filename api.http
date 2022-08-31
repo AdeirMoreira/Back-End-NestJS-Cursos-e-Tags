@@ -37,11 +37,11 @@ GET http://localhost:3000/courses
 Authorization: {{token}}
 
 ### Get corses By Id
-GET http://localhost:3000/courses/6df75d6d-a2d1-4220-a3bc-8630d4fa190e
+GET http://localhost:3000/courses/240c70a8-d32f-49cb-9308-9d7fd6c2b439
 Authorization: {{token}}
 
 ### Get By query
-GET http://localhost:3000/courses/search?s=6df75d6d-a2d1-4220-a3bc-8630d4fa190e
+GET http://localhost:3000/courses/search?s=240c70a8-d32f-49cb-9308-9d7fd6c2b439
 Authorization: {{token}}
 
 ### Resgister course
@@ -56,7 +56,7 @@ Content-Type: application/json
 }
 
 ### Edit Course
-PATCH   http://localhost:3000/courses/74f10589-cb31-4e17-99df-3a39bbdd2e13
+PATCH   http://localhost:3000/courses/b39a959e-3ad8-4ada-8607-5a6401456528
 Authorization: {{token}}
 Content-Type: application/json
 
@@ -66,5 +66,5 @@ Content-Type: application/json
 }
 
 ### Delete Course
-DELETE  http://localhost:3000/courses/64ec2b2a-e342-420b-a353-1addb0a32e5d
+DELETE  http://localhost:3000/courses/896463b7-68fa-4463-ad28-d0cb542dc25a
 Authorization: {{token}}
