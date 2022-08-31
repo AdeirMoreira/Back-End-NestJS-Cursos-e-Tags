@@ -20,7 +20,7 @@ config();
       synchronize: false,
       retryAttempts: 2,
       retryDelay: 100,
-      autoLoadEntities: true,
+      autoLoadEntities: false,
     }),
   ],
 })
@@ -35,9 +35,7 @@ export const migrationDataSource = new DataSource({
   database: process.env.POSTGRES_DB,
   entities: ['dist/**/*entity.js'],
   migrations: ['dist/migration/*.js'],
-  subscribers: [],
   synchronize: false,
-  logging: false
 });
 
 migrationDataSource.initialize()
