@@ -19,8 +19,6 @@ export class CoursesController {
         return res.status(HttpStatus.OK).send(await this.courseService.findAll())
     }
 
-    
-
     @Get(':id')
     findOne(@Param('id') id:string){
         return this.courseService.findOne(id)

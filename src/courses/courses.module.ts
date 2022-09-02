@@ -12,7 +12,7 @@ import { Tag } from './entities/tag.entity';
     imports: [
         // DataSourceModule, 
         TypeOrmModule.forFeature([Course,Tag]),
-        LibsModule
+        // LibsModule
     ],
     controllers: [CoursesController],
     providers: [
