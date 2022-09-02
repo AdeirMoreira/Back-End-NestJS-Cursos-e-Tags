@@ -37,3 +37,15 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: abc123
       POSTGRES_DB: postgres
+
+  dbTest:
+    image: postgres:alpine3.16
+    container_name: postgres-dbTest
+    restart: always
+    tty: true
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: abc123
+      POSTGRES_DB: postgresTest

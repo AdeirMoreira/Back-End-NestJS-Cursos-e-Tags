@@ -50,21 +50,21 @@ Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "name": "NestJS",
-    "description": "Curso de Nest, Node e Type",
-    "tags": []
+    "name": "React",
+    "description": "Curso de React",
+    "tags": ["React", "javaScript", "Front-End"]
 }
 
 ### Edit Course
-PATCH   http://localhost:3000/courses/b39a959e-3ad8-4ada-8607-5a6401456528
+PATCH   http://localhost:3000/courses/e9581531-b58b-45e7-a2c2-470972560679
 Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "description": "Curso de NestJS, NodeJS e TypeORM",
-    "tags": ["NestJS","NodeJS","TypeORM"]
+    "description": "teste",
+    "tags": ["Teste"]
 }
 
 ### Delete Course
-DELETE  http://localhost:3000/courses/896463b7-68fa-4463-ad28-d0cb542dc25a
+DELETE  http://localhost:3000/courses/e9581531-b58b-45e7-a2c2-470972560679
 Authorization: {{token}}
