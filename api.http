@@ -41,7 +41,7 @@ GET http://localhost:3000/courses/240c70a8-d32f-49cb-9308-9d7fd6c2b439
 Authorization: {{token}}
 
 ### Get By query
-GET http://localhost:3000/courses/search?s=240c70a8-d32f-49cb-9308-9d7fd6c2b439
+GET http://localhost:3000/courses/search?s=b39a959e-3ad8-4ada-8607-5a6401456528
 Authorization: {{token}}
 
 ### Resgister course
@@ -56,15 +56,15 @@ Content-Type: application/json
 }
 
 ### Edit Course
-PATCH   http://localhost:3000/courses/e9581531-b58b-45e7-a2c2-470972560679
+PATCH   http://localhost:3000/courses/d5017a3b-0910-4d2d-ac67-97ed3acb0cf8
 Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "description": "teste",
+    "description": "teste2",
     "tags": ["Teste"]
 }
 
 ### Delete Course
-DELETE  http://localhost:3000/courses/e9581531-b58b-45e7-a2c2-470972560679
+DELETE  http://localhost:3000/courses/d5017a3b-0910-4d2d-ac67-97ed3acb0cf8
 Authorization: {{token}}
