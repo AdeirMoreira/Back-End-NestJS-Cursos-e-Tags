@@ -5,69 +5,63 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+# Cursos e Tags
+
+Esse case tem a finaliade de praticar o framework [NestJS](https://nestjs.com/) e outras tecnologias Back-End. Trata-se de uma API REST que realiza um CRUD(cadastro, busca, edição e remoção) de dados relacionados a Cursos e Tags em um banco de dados. Além do [NodeJS](https://nodejs.org/pt-br/) e do [NestJS](https://nestjs.com/), foi ultilzado o banco de dados [PostgreSQL](https://www.postgresql.org/), para realizar a manipulação do banco de dados foi utlizado [typeORM](https://typeorm.io/), o framework [Jest](https://jestjs.io/pt-BR/) foi utilizado para testes unitários e testes ponta a ponta e2e. Por fim, o projeto desenvolvido utilizando containers [Docker](https://docs.docker.com/).
+
+## Tecnologias e Técnicas 🛠
+- [NodeJS](https://nodejs.org/pt-br/)
+- [NestJS](https://nestjs.com/)
+- [typeORM](https://typeorm.io/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [PostgreSQL](https://www.postgresql.org/)
+- Testes Unitários
+- Testes ponta a ponta e2e
+- Migração em banco de dados
+- Relação entre tabelas muitos p/ muitos 
+- POO
+- S-O-L-I-D
+- Conteinerização com Docker
+
+## ✔️ Features
+
+- [x] Cadastrar um curso com ou sem tags relacionada a ele.
+- [x] Consultar todos cursos ou apenas um 1 passando um id.
+- [x] Editar um curso e as tags relacionadas a ele passando um id.
+- [x] Deletar um curso passando um id.
+
+## Modelagem do banco de dados 🎲
+
+O banco de dadas é modelado com 2 entidades: Courses e Tags, cada uma tem sua respectiva tabela, além de uma tabela pivo auxiliar, pois a relacão entre cousos e tags é do tipo muito p/ muitos.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/98994187/188250644-3869a466-546b-449e-ba8f-0878ced0a5da.png" width="300" alt="Nest Logo" />
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Rodar e testar o case com o Docker 🐳
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Caso tenha o docker em sua maquina, dê o sequinte comando, o servidor rodará na porta 3000.
 
-## Installation
-
-```bash
-$ npm install
+Para iniciar o servidor
+```
+npm run start
+```
+Para rodar os testes 
+```
+npm run test
+```
+Para rodar os testes ponta a ponta e2e
+```
+npm run test:e2e
 ```
 
-## Running the app
+Após iniciar o servidor, é possivel testar todos os endpoints no arquivo api.http no qual estão configurados e prontos para uso, bastando substituir os ids nas requisições quando necessario. O arquivo se encotra na raiz do projeto. 
 
-```bash
-# development
-$ npm run start
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/98994187/188251471-e9f8ff97-a5b6-42d6-acbb-0aab5f60ee1c.png" width="600" height="400" alt="Nest Logo" />
+</p>
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+<h2 id="desenvolvedores">👨‍💻 Desenvolvedores</h2>
+<table>         
+<td><a href="https://github.com/future4code/silveira-Adeir-Maia"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/98994187?v=4" width="100px;" alt="Imagem profile Adeir Moreira desenvolvedor"/><br /><sub><b>Adeir Moreira</b></sub></a><br />   
+</table>
