@@ -25,6 +25,7 @@ Esse case tem a finaliade de praticar o framework [NestJS](https://nestjs.com/) 
 
 ## ✔️ Features
 
+
 - [x] Cadastrar um curso com ou sem tags relacionadas a ele.
 - [x] Consultar todos cursos ou apenas um 1 passando um id.
 - [x] Editar um curso ou as tags relacionadas a ele passando um id.
@@ -33,6 +34,7 @@ Esse case tem a finaliade de praticar o framework [NestJS](https://nestjs.com/) 
 ## Modelagem do banco de dados 🎲
 
 O banco de dadas é modelado com 2 entidades: Courses e Tags, cada uma tem sua respectiva tabela, além de uma tabela pivo auxiliar, pois a relacão entre cursos e tags é do tipo muito p/ muitos.
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/98994187/188250644-3869a466-546b-449e-ba8f-0878ced0a5da.png" width="300" alt="Nest Logo" />
