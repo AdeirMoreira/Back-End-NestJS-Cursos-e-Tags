@@ -46,7 +46,7 @@ Caso tenha o docker em sua maquina, dê o sequinte comando, o servidor rodará n
 
 Para iniciar o servidor
 ```
-npm run start
+docker compose up
 ```
 Para rodar os testes 
 ```
