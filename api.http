@@ -1,52 +1,14 @@
-### SingUp
-POST http://localhost:3000/user
-Content-Type: application/json 
-
-{
-    "name": "teste",
-    "email": "teste@email.com",
-    "password": "123"
-}
-
-### Login
-# @name login
-POST http://localhost:3000/user/login
-Content-Type: application/json 
-
-{
-    "email": "teste@email.com",
-    "password": "123"
-}
-
-###
-@token = {{login.response.body.token}}
-###
-
-### Get All Users
-GET http://localhost:3000/user
-Authorization: {{token}}
-
-### Get User By Id
-GET http://localhost:3000/user/c07e7872-e97d-4b22-9083-c7f18c284530
-
-### Delete User
-DELETE http://localhost:3000/user/119fe2a3-ca2c-40fb-9f74-fc25fdcaca5e
-
 ### Get All Courses
 GET http://localhost:3000/courses
-Authorization: {{token}}
 
 ### Get corses By Id
 GET http://localhost:3000/courses/240c70a8-d32f-49cb-9308-9d7fd6c2b439
-Authorization: {{token}}
 
 ### Get By query
 GET http://localhost:3000/courses/search?s=b39a959e-3ad8-4ada-8607-5a6401456528
-Authorization: {{token}}
 
 ### Resgister course
 POST http://localhost:3000/courses
-Authorization: {{token}}
 Content-Type: application/json
 
 {
@@ -57,7 +19,6 @@ Content-Type: application/json
 
 ### Edit Course
 PATCH   http://localhost:3000/courses/d5017a3b-0910-4d2d-ac67-97ed3acb0cf8
-Authorization: {{token}}
 Content-Type: application/json
 
 {
@@ -66,5 +27,4 @@ Content-Type: application/json
 }
 
 ### Delete Course
-DELETE  http://localhost:3000/courses/d5017a3b-0910-4d2d-ac67-97ed3acb0cf8
-Authorization: {{token}}
+DELETE  http://localhost:3000/courses/4b58ff72-9ad9-40ba-97f4-3c3dffadfb4e

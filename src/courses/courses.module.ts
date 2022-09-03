@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { CoursesController } from './courses.controller';
 import { CoursesService } from './courses.service';
-import { LibsModule } from 'src/libs/libs.module';
+import { LibsModule } from '../libs/libs.module';
 import { DataSourceModule } from 'src/data-source/data-source.module';
 import { repositoriesProviders } from './repositories/repositories.providers';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -12,7 +12,7 @@ import { Tag } from './entities/tag.entity';
     imports: [
         // DataSourceModule, 
         TypeOrmModule.forFeature([Course,Tag]),
-        // LibsModule
+        LibsModule
     ],
     controllers: [CoursesController],
     providers: [

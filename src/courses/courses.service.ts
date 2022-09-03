@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException} from '@nestjs/common';
+import { Inject, Injectable, NotFoundException} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateCourseDto } from './dto/create-course.dto';
@@ -12,7 +12,7 @@ export class CoursesService {
         // @Inject('COURSES_REPOSITORY')
         // private readonly courseRepository: Repository<Course>,
         // @Inject('TAGS_REPOSITORY')
-        // private readonly tagRepository: Repository<Tag>
+        // private readonly tagRepository: Repository<Tag>,
         @InjectRepository(Course)
         private readonly courseRepository: Repository<Course>,
         @InjectRepository(Tag)

@@ -3,7 +3,10 @@ import { CoursesModule } from './courses/courses.module';
 import { DataSourceModule } from './data-source/data-source.module';
 
 @Module({
-  imports: [DataSourceModule ,CoursesModule],
+  imports: [
+    DataSourceModule,
+    CoursesModule
+  ],
   providers: [],
   controllers: []
 })
