@@ -7,7 +7,7 @@
 
 # Cursos e Tags
 
-Esse case tem a finaliade de praticar o framework [NestJS](https://nestjs.com/) e outras tecnologias Back-End. Trata-se de uma API REST que realiza um CRUD(cadastro, busca, edição e remoção) de dados relacionados a Cursos e Tags em um banco de dados. Além do [NodeJS](https://nodejs.org/pt-br/) e do [NestJS](https://nestjs.com/), foi ultilzado o banco de dados [PostgreSQL](https://www.postgresql.org/), para realizar a manipulação do banco de dados foi utlizado [typeORM](https://typeorm.io/), o framework [Jest](https://jestjs.io/pt-BR/) foi utilizado para testes unitários e testes ponta a ponta e2e. Por fim, o projeto desenvolvido utilizando containers [Docker](https://docs.docker.com/).
+Esse case tem a finaliade de praticar o framework [NestJS](https://nestjs.com/) e outras tecnologias Back-End. Trata-se de uma API REST que realiza um CRUD(cadastro, busca, edição e remoção) de dados relacionados a Cursos e Tags em um banco de dados. Além do [NodeJS](https://nodejs.org/pt-br/) e do [NestJS](https://nestjs.com/), foi ultilzado o banco de dados [PostgreSQL](https://www.postgresql.org/), o framework [typeORM](https://typeorm.io/) para realizar a manipulação do banco de dados, o framework [Jest](https://jestjs.io/pt-BR/) para testes unitários e testes ponta a ponta e2e. Por fim, o projeto desenvolvido utilizando containers [Docker](https://docs.docker.com/).
 
 ## Tecnologias e Técnicas 🛠
 - [NodeJS](https://nodejs.org/pt-br/)
@@ -25,14 +25,16 @@ Esse case tem a finaliade de praticar o framework [NestJS](https://nestjs.com/) 
 
 ## ✔️ Features
 
-- [x] Cadastrar um curso com ou sem tags relacionada a ele.
+
+- [x] Cadastrar um curso com ou sem tags relacionadas a ele.
 - [x] Consultar todos cursos ou apenas um 1 passando um id.
-- [x] Editar um curso e as tags relacionadas a ele passando um id.
+- [x] Editar um curso ou as tags relacionadas a ele passando um id.
 - [x] Deletar um curso passando um id.
 
 ## Modelagem do banco de dados 🎲
 
-O banco de dadas é modelado com 2 entidades: Courses e Tags, cada uma tem sua respectiva tabela, além de uma tabela pivo auxiliar, pois a relacão entre cousos e tags é do tipo muito p/ muitos.
+O banco de dadas é modelado com 2 entidades: Courses e Tags, cada uma tem sua respectiva tabela, além de uma tabela pivo auxiliar, pois a relacão entre cursos e tags é do tipo muito p/ muitos.
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/98994187/188250644-3869a466-546b-449e-ba8f-0878ced0a5da.png" width="300" alt="Nest Logo" />
